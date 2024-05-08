@@ -19,14 +19,16 @@ class _AddUserScreenState extends State<AddUserScreen> {
 
     print(name);
     print(password);
-    final Uri url = Uri.https('localhost:8000', '/users');
-    print(url);
+
     final Map<String, String> headers = {'Content-Type': 'application/json'};
 
+    final Uri url = Uri.parse('http://localhost:8000/create_users');
+    print(url);
     // Serialize userData to JSON format using jsonEncode
-    final String jsonData = jsonEncode({'name': name, 'password': password});
+    final String jsonData = json.encode({'name': name, 'password': password});
 
-    final http.Response response = await http.get(url, headers: headers);
+    final http.Response response =
+        await http.post(url, headers: headers, body: jsonData);
 
     if (response.statusCode == 200) {
       // User added successfully, handle the response accordingly
