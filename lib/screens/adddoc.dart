@@ -3,6 +3,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class AddDocScreen extends StatefulWidget {
+  const AddDocScreen({super.key});
+
   @override
   _AddDocScreenState createState() => _AddDocScreenState();
 }

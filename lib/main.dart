@@ -1,13 +1,15 @@
-import 'package:doc_helper/screens/adddoc.dart';
+import 'package:doc_helper/login.dart';
 import 'package:doc_helper/screens/adduserscreen.dart';
-import 'package:doc_helper/screens/addvisit.dart';
 import 'package:flutter/material.dart';
+import 'package:doc_helper/screens/adddoc.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,16 +20,17 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeScreen(),
+        '/': (context) => const Login(),
         '/add_user': (context) => AddUserScreen(),
-        '/add_doc': (context) => AddDocScreen(),
-        '/add_visit': (context) => AddVisitScreen(),
+        '/add_doc': (context) => const AddDocScreen(),
       },
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,19 +45,13 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, '/add_user');
               },
-              child: const Text('Add User'),
+              child: const Text('I am a User'),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/add_doc');
               },
-              child: const Text('Add Doctor'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/add_visit');
-              },
-              child: const Text('Add Visit'),
+              child: const Text('I am a Doctor'),
             ),
           ],
         ),
