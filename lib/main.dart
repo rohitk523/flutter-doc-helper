@@ -1,5 +1,3 @@
-import 'package:doc_helper/login_dummy.dart';
-import 'package:doc_helper/screens/adduserscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:doc_helper/screens/adddoc.dart';
 
@@ -20,7 +18,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => AddDocScreen(),
+        '/': (context) => const AddDocScreen(),
         // '/add_user': (context) => AddUserScreen(),
         // '/add_doc': (context) => const AddDocScreen(),
       },

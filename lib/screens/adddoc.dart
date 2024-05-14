@@ -7,6 +7,7 @@ class AddDocScreen extends StatefulWidget {
   const AddDocScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _AddDocScreenState createState() => _AddDocScreenState();
 }
 
@@ -30,9 +31,10 @@ class _AddDocScreenState extends State<AddDocScreen> {
 
     if (response.statusCode == 200) {
       // Navigate to the welcome screen for doctors
+      // ignore: use_build_context_synchronously
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => WelcomeDoctorScreen()),
+        MaterialPageRoute(builder: (context) => const WelcomeDoctorScreen()),
       );
     } else {
       print('Error: ${response.statusCode}');
@@ -64,7 +66,7 @@ class _AddDocScreenState extends State<AddDocScreen> {
               flex: 1,
               child: Container(
                 width: 300,
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
                   borderRadius: BorderRadius.circular(10),
@@ -80,12 +82,13 @@ class _AddDocScreenState extends State<AddDocScreen> {
                     const SizedBox(height: 20.0),
                     TextField(
                       controller: _nameController,
-                      decoration: InputDecoration(labelText: 'Name'),
+                      decoration: const InputDecoration(labelText: 'Name'),
                     ),
                     const SizedBox(height: 10.0),
                     TextField(
                       controller: _specialityController,
-                      decoration: InputDecoration(labelText: 'Speciality'),
+                      decoration:
+                          const InputDecoration(labelText: 'Speciality'),
                     ),
                     const SizedBox(height: 20.0),
                     ElevatedButton(

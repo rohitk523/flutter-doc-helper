@@ -3,7 +3,10 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class AddVisitScreen extends StatefulWidget {
+  const AddVisitScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _AddVisitScreenState createState() => _AddVisitScreenState();
 }
 
@@ -44,41 +47,41 @@ class _AddVisitScreenState extends State<AddVisitScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Visit'),
+        title: const Text('Add Visit'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
+            const Text(
               'Add Visit',
               style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             TextField(
               controller: _userIdController,
-              decoration: InputDecoration(labelText: 'User ID'),
+              decoration: const InputDecoration(labelText: 'User ID'),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             TextField(
               controller: _docIdController,
-              decoration: InputDecoration(labelText: 'Doctor ID'),
+              decoration: const InputDecoration(labelText: 'Doctor ID'),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             TextField(
               controller: _symptomsController,
-              decoration: InputDecoration(labelText: 'Symptoms'),
+              decoration: const InputDecoration(labelText: 'Symptoms'),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             TextField(
               controller: _diseaseController,
-              decoration: InputDecoration(labelText: 'Disease'),
+              decoration: const InputDecoration(labelText: 'Disease'),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: _submitForm,
-              child: Text('Submit'),
+              child: const Text('Submit'),
             ),
           ],
         ),
