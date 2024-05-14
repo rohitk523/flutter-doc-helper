@@ -39,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^1.2.0
   animated_login: ^1.7.2
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +68,7 @@ flutter:
       - images/detalhe1.png
       - images/detalhe2.png
       - images/fundo.png
-
+      - images/niggatron.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
